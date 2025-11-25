@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=wave&color=0:e96443,100:904e95&height=200&section=header&text=QA%20×%20SDET%20×%20LLM&fontSize=32&fontAlignY=40&fontColor=ffffff&animation=fadeIn"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:e96443,100:904e95&height=200&section=header&text=QA%20×%20SDET%20×%20LLM&fontSize=32&fontAlignY=40&fontColor=ffffff&animation=fadeIn"
     alt="QA × SDET × LLM"
   />
 </p>
