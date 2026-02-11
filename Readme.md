@@ -14,7 +14,7 @@
 ## Professional Repositories
 
 - [test-portfolio-2026](https://github.com/RNA4219/test-portfolio-2026)  
-  - UI モックベースの LP テスト計画・設計に係る手動テスト ポートフォリオ (小規模な Playwright サンプル付き)
+  - UI モックベースの LP テスト計画・設計に係る手動テスト ポートフォリオ (Playwright サンプル付き)
 
 - [portfolio](https://github.com/RNA4219/portfolio)  
   - QA / SDET / LLM に関するサンプル・設定・メモをまとめたR&D寄りのポートフォリオハブ
@@ -24,6 +24,15 @@
 
 - [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
   - LLM 前提のワークフロー・レシピ集
+
+
+## Articles / Writing
+- [LLM時代のQA再設計──自動化ツール群で考えた「品質保証の再定義」](https://zenn.dev/rna4219/articles/df0bd2ffe9319c)
+  - [去年のポートフォリオ](https://github.com/RNA4219/portfolio)  の解説記事です。
+    
+- [Windows環境でLLMエージェント開発環境を10ドルで構築した話（Qiita）](https://qiita.com/RNA4219/items/6bcc3b733347e853f4a6)
+  - OSSを繋いで規約変更まで10ドルでLLMエージェントツールを一日1000回実行できるカンバン型のツールを構築した話です。
+
 
 ## Side Projects / Generative AI Experiments
 
