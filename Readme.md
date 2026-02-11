@@ -13,11 +13,11 @@
 
 ## Professional Repositories
 
-- [Day8](https://github.com/RNA4219/Day8)  
-  - CI 上のテスト結果からレポートと提案だけを出す QA オートメーション
+- [test-portfolio-2026](https://github.com/RNA4219/test-portfolio-2026)  
+  - UI モックベースの LP テスト計画・設計に係る手動テスト ポートフォリオ (小規模な Playwright サンプル付き)
 
 - [portfolio](https://github.com/RNA4219/portfolio)  
-  - QA / SDET / LLM に関するサンプル・設定・メモをまとめたポートフォリオハブ
+  - QA / SDET / LLM に関するサンプル・設定・メモをまとめたR&D寄りのポートフォリオハブ
 
 - [planting-planner](https://github.com/RNA4219/planting-planner)  
   - 作付け逆算カレンダー（FastAPI + フロント）
