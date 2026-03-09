@@ -19,11 +19,11 @@
 - [portfolio](https://github.com/RNA4219/portfolio)  
   - QA / SDET / LLM に関するサンプル・設定・メモをまとめたR&D寄りのポートフォリオハブ
 
-- [planting-planner](https://github.com/RNA4219/planting-planner)  
-  - 作付け逆算カレンダー（FastAPI + フロント）
-
 - [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
   - LLM 前提のワークフロー・レシピ集
+
+- [memx-core]([https://github.com/RNA4219/planting-planner](https://github.com/RNA4219/memx-core))  
+  - LLM向けの個人用メモリ／知識ストア
 
 
 ## Articles / Writing
