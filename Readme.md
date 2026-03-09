@@ -22,7 +22,7 @@
 - [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
   - LLM 前提のワークフロー・レシピ集
 
-- [memx-core](https://github.com/RNA4219/planting-planner)  
+- [memx-core](https://github.com/RNA4219/memx-core)  
   - LLM向けの個人用メモリ／知識ストア
 
 
