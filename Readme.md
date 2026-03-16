@@ -7,23 +7,26 @@
 
 ## About
 
-- QA / SDET / LLM エンジニアとして就職活動中  
-- 運用中プロダクトの品質改善と、テスト自動化・LLM活用まわりの設計が関心領域  
-- ここでは「**エンジニアとしての実験とポートフォリオ**」だけを置いています
+QA / SDET / LLM エンジニアとして就職活動中  
+品質改善、テスト自動化、LLM活用まわりの設計に関心があります。  
+ここでは、エンジニアとしての実験とポートフォリオを公開しています。
 
 ## Professional Repositories
 
 - [test-portfolio-2026](https://github.com/RNA4219/test-portfolio-2026)  
-  - UI モックベースの LP テスト計画・設計に係る手動テスト ポートフォリオ (Playwright サンプル付き)
+  - UIモックベースのLPテスト計画・設計をまとめた手動テストポートフォリオ（Playwrightサンプル付き）
 
 - [portfolio](https://github.com/RNA4219/portfolio)  
-  - QA / SDET / LLM に関するサンプル・設定・メモをまとめたR&D寄りのポートフォリオハブ
+  - QA / SDET / LLM に関するサンプル・設定・メモをまとめたポートフォリオハブ
 
-- [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
-  - LLM 前提のワークフロー・レシピ集
+- [RanD](https://github.com/RNA4219/RanD)  
+  - 論文や技術情報をもとに、要約だけでなく、抜けや特徴の指摘、次の開発案まで扱うR&Dエージェント群
 
 - [memx-core](https://github.com/RNA4219/memx-core)  
-  - LLM向けの個人用メモリ／知識ストア
+  - LLM向けの個人用メモリ / 知識ストア
+
+- [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
+  - LLM前提のワークフロー・レシピ集
 
 
 ## Articles / Writing
