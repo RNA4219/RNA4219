@@ -41,7 +41,8 @@ QA / SDET / LLM エンジニアとして就職活動中
 
 - [genai-content-portfolio](https://github.com/RNA4219/genai-content-portfolio)  
   - Suno / Sora / 画像生成 / ドット絵など、生成AIで作ったコンテンツと、
-    そのプロンプト・設定・振り返りをまとめた成果物ポートフォリオ
+    そのプロンプト・設定・振り返りをまとめたサブポートフォリオ
+    ファンメイド作品を含むため、該当各掲載物は非公式である旨と権利注記を明示。
 
 ## Tech Stack
 
