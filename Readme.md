@@ -14,19 +14,16 @@ QA / SDET / LLM エンジニアとして就職活動中
 ## Professional Repositories
 
 - [test-portfolio-2026](https://github.com/RNA4219/test-portfolio-2026)  
-  - UIモックベースのLPテスト計画・設計をまとめた手動テストポートフォリオ（Playwrightサンプル付き）
+  - UIモックベースのLPテスト計画・設計をまとめた手動テストポートフォリオ。Playwrightサンプル付き
 
 - [portfolio](https://github.com/RNA4219/portfolio)  
-  - QA / SDET / LLM に関するサンプル・設定・メモをまとめたポートフォリオハブ
-
-- [RanD](https://github.com/RNA4219/RanD)  
-  - 論文や技術情報をもとに、要約だけでなく、抜けや特徴の指摘、次の開発案まで扱うR&Dエージェント群
-
-- [memx-core](https://github.com/RNA4219/memx-core)  
-  - LLM向けの個人用メモリ / 知識ストア
+  - QA / SDET / LLM 領域のサンプル、設定、メモを集約したポートフォリオハブ
 
 - [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook)  
-  - LLM前提のワークフロー・レシピ集
+  - QA / ガバナンスを踏まえた、LLM時代の実装・レビュー・検収ワークフロー集
+
+- [shipyard-cp](https://github.com/RNA4219/shipyard-cp)  
+  - AI エージェントの開発フローを統制し、計画・開発・受け入れ確認・公開 を責務分離して管理するオーケストレーションツール
 
 
 ## Articles / Writing
