@@ -25,16 +25,25 @@ I build practical infrastructure for AI-assisted R&D: agent tooling, verificatio
 
 以下は独立したデモの寄せ集めではなく、調査・要求整理から検証と品質判断までを支えるツール群です。
 
-```mermaid
-flowchart LR
-    R["RanD<br/>Research & Requirements"] --> C["code-to-gate<br/>Code Risk & Gate Evidence"]
-    C --> H["HATE<br/>Automated Test Evidence"]
-    H --> M["manual-bb<br/>Manual Acceptance Evidence"]
-    M --> Q["QEG<br/>Evidence Graph & Verdict"]
-    L["Lakda<br/>Runtime Exploration & Replay"] --> H
-    W["workflow-cookbook<br/>Contracts / Acceptance / CI"] -. supports .-> C
-    S["shipyard-cp<br/>Agent Control Plane"] -. coordinates .-> R
-```
+<p align="center">
+  <a href="https://github.com/RNA4219/RanD"><b>RanD</b></a>
+  &nbsp;→&nbsp;
+  <a href="https://github.com/RNA4219/code-to-gate"><b>code-to-gate</b></a>
+  &nbsp;→&nbsp;
+  <a href="https://github.com/RNA4219/harness-auto-test-evidence"><b>HATE</b></a>
+  &nbsp;→&nbsp;
+  <a href="https://github.com/RNA4219/manual-bb-test-harness"><b>manual-bb</b></a>
+  &nbsp;→&nbsp;
+  <a href="https://github.com/RNA4219/quality-evidence-graph"><b>QEG</b></a>
+</p>
+
+<p align="center">
+  <sub>Research &amp; Requirements → Code Analysis → Automated Testing → Manual Acceptance → Quality Analysis</sub>
+</p>
+
+- [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) supplies runtime exploration and reproducible execution results.
+- [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) supplies reusable workflows, acceptance assets, and CI practices across the stack.
+- [shipyard-cp](https://github.com/RNA4219/shipyard-cp) coordinates agent-assisted work across planning, development, acceptance, integration, and publishing.
 
 | Layer | Repository | Responsibility |
 |---|---|---|
