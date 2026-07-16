@@ -8,22 +8,22 @@
 <h3 align="center">Autonomous R&amp;D Systems Engineer / Harness Engineer</h3>
 
 <p align="center">
-  Agent runtimes · Verification harnesses · Control planes · Evidence-driven quality governance
+  Agent tooling · Verification harnesses · Control planes · Quality infrastructure
 </p>
 
 ## About
 
-AIに開発・研究を任せても、迷子にならず、壊さず、証拠を残し、必要なら止められるようにする仕組みを作っています。
+AIを活用した研究・開発のための実行基盤、検証ハーネス、品質ツールを設計・実装しています。
 
-AIを単なる生成器として扱うのではなく、明示的な契約、状態機械、独立した安全・品質Gate、追跡可能なArtifactを持つ実行系として設計します。QA / SDETを土台に、要求、コード差分、実行時探索、自動・手動テスト、証拠グラフ、最終判断を接続しています。
+QA / SDETを土台に、曖昧な要求を実行可能なワークフローへ落とし込み、コード分析、テスト、自動化、結果整理までを接続することが主な関心領域です。公開リポジトリでは、実際の開発で再利用できる単位へ分割したツールと運用資産を公開しています。
 
-**AI Conductor** は、モデル、ツール、テスト、Gate、人間の責務を分け、全体を一つの検証可能な実行系として指揮する立場を指す、自分なりの呼称です。
+**AI Conductor** は、複数のAI、ツール、工程を目的に合わせて編成し、継続的な成果へつなげる立場を表す、自分なりの呼称です。
 
-I build governed autonomous R&D systems: the control, verification, and evidence layers that make AI-generated work observable, reproducible, reviewable, and controllable.
+I build practical infrastructure for AI-assisted R&D: agent tooling, verification harnesses, control planes, and quality workflows.
 
-## One System, Eight Public Repositories
+## Eight Repositories, One Engineering Stack
 
-以下は独立したデモの寄せ集めではなく、要求から品質判断までを接続する一つのシステムとして設計しています。
+以下は独立したデモの寄せ集めではなく、調査・要求整理から検証と品質判断までを支えるツール群です。
 
 ```mermaid
 flowchart LR
@@ -32,46 +32,43 @@ flowchart LR
     H --> M["manual-bb<br/>Manual Acceptance Evidence"]
     M --> Q["QEG<br/>Evidence Graph & Verdict"]
     L["Lakda<br/>Runtime Exploration & Replay"] --> H
-    W["workflow-cookbook<br/>Contracts / Acceptance / CI"] -. spans .-> C
-    S["shipyard-cp<br/>Agent Control Plane"] -. governs .-> R
+    W["workflow-cookbook<br/>Contracts / Acceptance / CI"] -. supports .-> C
+    S["shipyard-cp<br/>Agent Control Plane"] -. coordinates .-> R
 ```
 
 | Layer | Repository | Responsibility |
 |---|---|---|
 | Research & Requirements | [RanD](https://github.com/RNA4219/RanD) | Research, hypothesis formation, requirement discovery, and acceptance framing. |
-| Workflow Contracts | [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) | Operational contracts, Task Seeds, acceptance gates, reusable CI, and evidence-oriented development practices. |
-| Agent Control Plane | [shipyard-cp](https://github.com/RNA4219/shipyard-cp) | Governed agent execution across planning, development, acceptance, integration, and publishing. |
-| Code Risk & Gate | [code-to-gate](https://github.com/RNA4219/code-to-gate) | Converts source changes, static signals, architecture checks, and repository risk into reviewable Gate evidence. |
-| Runtime Exploration | [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) | Explores targets as state transitions and produces reproducible, replayable runtime evidence. |
-| Automated Test Evidence | [harness-auto-test-evidence](https://github.com/RNA4219/harness-auto-test-evidence) | Normalizes automated test results into versioned, traceable, downstream-consumable evidence. |
-| Manual Acceptance | [manual-bb-test-harness](https://github.com/RNA4219/manual-bb-test-harness) | Produces risk-based manual black-box acceptance evidence and Go / No-Go material. |
-| Evidence & Decision | [quality-evidence-graph](https://github.com/RNA4219/quality-evidence-graph) | Connects requirements, risks, changes, tests, evidence, and approvals into an evidence-based quality verdict. |
+| Workflow Assets | [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) | Task Seeds, acceptance workflows, reusable CI, and development practices. |
+| Agent Operations | [shipyard-cp](https://github.com/RNA4219/shipyard-cp) | Coordinates agent-assisted work across planning, development, acceptance, integration, and publishing. |
+| Code Analysis | [code-to-gate](https://github.com/RNA4219/code-to-gate) | Converts source changes, static signals, architecture checks, and repository risk into reviewable results. |
+| Runtime Exploration | [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) | Explores software behavior and produces reproducible runtime results. |
+| Automated Testing | [harness-auto-test-evidence](https://github.com/RNA4219/harness-auto-test-evidence) | Normalizes automated test results for downstream use. |
+| Manual Acceptance | [manual-bb-test-harness](https://github.com/RNA4219/manual-bb-test-harness) | Supports risk-based manual black-box testing and acceptance review. |
+| Quality Analysis | [quality-evidence-graph](https://github.com/RNA4219/quality-evidence-graph) | Connects requirements, risks, changes, tests, and review results for quality assessment. |
 
-## Current R&D
+## Current Work
 
-The public stack above is now being integrated into a **private autonomous R&D runtime**.
+I am continuing to integrate and extend these tools through private R&D projects.
 
-生成、独立評価、安全判定、品質判定、実行権限、人間の境界承認を一体化せず、別々のActorとArtifactとして扱うことで、自律性を上げても判断根拠と停止可能性を失わない構造を作っています。
+プロジェクト固有の構成、運用方式、進捗詳細は公開せず、単独でも再利用価値を持つ部分だけをOSSとして切り出しています。
 
-The runtime itself remains private. The public repositories are its reusable control, verification, and evidence layer.
+## Open Source Approach
 
-## Engineering Principles
-
-- **Evidence over confidence.** 判断はモデルの自信ではなく、追跡可能な証拠へ接続する。
-- **Explicit contracts over implicit coordination.** Schema、状態遷移、責務境界を先に固定する。
-- **Fail closed.** 証拠欠損、未知判定、契約不一致は続行ではなくholdへ送る。
-- **Independent authority.** 安全、品質、実行権限を一つのAgentへ集約しない。
-- **Replayable by design.** 再実行、復旧、冪等性、障害注入を後付けにしない。
-- **AI proposes; evidence decides.** AIの生成速度を、検証不能な速度にしない。
+- Build from concrete development and QA problems.
+- Keep each repository independently understandable and usable.
+- Include tests, examples, documentation, and CI with the implementation.
+- Separate reusable public components from project-specific integration.
+- Prefer working software and reproducible examples over broad claims.
 
 ## Focus Areas
 
-`Autonomous R&D Systems` · `Agent Runtimes` · `Harness Engineering` · `Control Planes` · `Quality Governance` · `Evidence Graphs` · `Contract-Driven Workflows` · `LLM-native Development`
+`Autonomous R&D Systems` · `Agent Tooling` · `Harness Engineering` · `Control Planes` · `Quality Infrastructure` · `Developer Workflows` · `Test Automation` · `LLM-native Development`
 
 ## Core Stack
 
 - **Languages:** Python, TypeScript / JavaScript, SQL, Bash
-- **Contracts & State:** JSON Schema, SQLite, state machines, append-only artifacts, REST / CLI interfaces
-- **QA & Verification:** pytest, Playwright, Airtest, Jest / Vitest, coverage, CodeQL, GitHub Actions
-- **Runtime & Isolation:** Docker / OCI containers, devcontainers, async workers, local-first infrastructure
+- **Interfaces & Data:** JSON Schema, SQLite, REST APIs, CLI tools, structured outputs
+- **QA & Automation:** pytest, Playwright, Airtest, Jest / Vitest, coverage, CodeQL, GitHub Actions
+- **Runtime & Infrastructure:** Docker / OCI containers, devcontainers, async processing, local-first tooling
 - **LLM Systems:** OpenAI-compatible APIs, local LLMs, llama.cpp / Ollama, routing and orchestration tooling
