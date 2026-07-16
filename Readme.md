@@ -7,63 +7,53 @@
 
 ## About
 
-**AI Conductor / Harness Engineer**
+**Autonomous R&D Systems Engineer / Harness Engineer**
 
-LLMネイティブ開発のための、エージェント基盤・ハーネス設計・品質統制を設計・実装しています。  
-複数のAI・工程・責務を束ね、観測可能・再現可能・統制可能なワークフローに落とし込むことが主な関心領域です。
+自律R&Dシステム、エージェント実行基盤、検証ハーネス、証拠駆動の品質統制を設計・実装しています。
 
-I build agent systems, control planes, and quality governance for LLM-native development.  
-My work focuses on turning ambiguous AI workflows into observable, reviewable, and governable execution systems.
+AIを単なる生成器として扱うのではなく、明示的な契約、状態機械、独立した安全・品質Gate、追跡可能なArtifactによって、観測可能・再現可能・統治可能な実行系へ落とし込むことが主な関心領域です。
 
-QA / SDET の経験を土台にしつつ、現在は agentic workflows, orchestration, state, contracts, evidence, and publish gates を主戦場にしています。
+QA / SDETを土台に、requirements → code risk → runtime exploration → automated / manual test evidence → evidence graph → governed decision を接続する基盤を構築しています。
 
-## Featured Repositories
+I design and build governed autonomous R&D systems: agent runtimes, control planes, verification harnesses, and evidence-driven quality infrastructure.
 
-- [shipyard-cp](https://github.com/RNA4219/shipyard-cp)  
-  - AIエージェントの開発フローを統制する control plane。  
-    plan / dev / acceptance / integrate / publish を責務分離して扱う、開発向けオーケストレーション基盤。
+My work turns AI-generated work into reproducible execution and reviewable decisions through explicit contracts, state machines, independent gates, and traceable evidence.
 
-- [agent-protocols](https://github.com/RNA4219/agent-protocols)  
-  - コーディングAIエージェント向けの契約駆動プロトコル。  
-    intent / task / acceptance / publish gate / evidence を明示し、統制可能な実行モデルを定義。
+## System Portfolio
 
-- [RanD](https://github.com/RNA4219/RanD)  
-  - R&Dエージェントのための多層オーケストレーション基盤。  
-    research / insight / gate / sync / notify をつなぐ探索・評価・連携の土台。
+### Research & Requirements
 
-- [portfolio](https://github.com/RNA4219/portfolio)  
-  - QA / SDET / LLM の実践を再現可能な形で示すポートフォリオ。  
-    テスト、CI、カバレッジ、検証資産を含む品質成果のハブ。
+- **RanD**  
+  Research, hypothesis formation, requirement discovery, and acceptance framing.
 
-## Writing
+### Control & Operations
 
-- [プロンプトエンジニアリング ? RAG ? Skills ? MCP ? コンテキストエンジニアリング ? - 全然わからん！](https://zenn.dev/rna4219/articles/9f04caba99091e)  
-  - 2026年のLLMパイプラインを、MCP・Skills・コンテキストエンジニアリングの役割に分けて整理した記事。  
-    「何をどのレイヤーで扱うのか」を見直すための全体マップです。
+- **shipyard-cp**  
+  Control plane for governed agent execution across plan, development, acceptance, integration, and publish stages.
 
-- [「生成AI！頼むから記憶してくれ！」をOSS調査で分解すると2つの方向性が見えた](https://zenn.dev/rna4219/articles/071bdfa611d027)  
-  - AIの「記憶」を、会話継続のための記憶と、長コンテキスト運用を支える記憶層に分けて整理した記事。  
-    完成品としてのAIと、差し込み可能な記憶モジュールの違いも扱っています。
+- **workflow-cookbook**  
+  Operational contracts, Task Seeds, acceptance workflows, reusable CI, and evidence-oriented development practices.
 
-- [ついにローカルLLMで安心して仕事が出来る！― Qwen3.5-27B 採用レポート](https://zenn.dev/rna4219/articles/b945d175cde87c)  
-  - ローカルLLMを実運用の観点から評価し、Qwen3.5-27Bを常用エンジンとして採用した判断記録。  
-    ベンチマークの数字だけでなく、実際のコーディング体験ベースで整理しています。
+### Code & Runtime Verification
 
-- [LLM時代のQA再設計──自動化ツール群で考えた「品質保証の再定義」](https://zenn.dev/rna4219/articles/df0bd2ffe9319c)  
-  - QAを「テスト係」ではなく、LLM時代の品質統制として捉え直した記事。  
-    現在の agent systems / harness engineering 的な発想の土台になっている整理です。
+- **code-to-gate**  
+  Converts source changes, static signals, architecture checks, and repository risk into reviewable Gate evidence.
 
-## Side Projects / Creative Work
+- **domain-lakda-runner**  
+  Produces replayable runtime evidence through domain-specific exploration and oracle-driven execution.
 
-- [LyricLytic](https://github.com/RNA4219/LyricLytic)  
-  - ローカルLLM前提で設計した、作詞支援ワークベンチ。
+### Automated & Manual Test Evidence
 
-- [genai-content-portfolio](https://github.com/RNA4219/genai-content-portfolio)  
-  - Suno / Sora / 画像生成 / ドット絵など、生成AI表現の制作物・設定・振り返りをまとめたサブポートフォリオ。  
-    ファンメイド作品を含むため、該当作品には非公式である旨と権利注記を記載。
+- **harness-auto-test-evidence**  
+  Normalizes automated test results into traceable, downstream-consumable evidence.
 
-- [planting-planner](https://github.com/RNA4219/planting-planner)  
-  - 収穫希望週から逆算して播種・定植週を提示する、作付け計画支援OSS。
+- **manual-bb-test-harness**  
+  Generates and records risk-based manual black-box acceptance evidence and Go / No-Go material.
+
+### Evidence Aggregation & Decision
+
+- **quality-evidence-graph**  
+  Connects requirements, risks, changes, tests, evidence, and approvals into an evidence-based quality verdict.
 
 ## Focus Areas
 
