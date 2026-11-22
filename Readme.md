@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:141e30,100:243b55&height=200&section=header&text=AI%20Conductor&fontSize=36&fontAlignY=40&fontColor=ffffff&animation=fadeIn"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:1c2128&height=180&section=header&text=AI%20Conductor&fontSize=40&fontAlignY=38&fontColor=ffffff"
     alt="AI Conductor"
   />
 </p>
@@ -28,33 +28,33 @@ I build practical infrastructure for AI-assisted R&D: agent tooling, verificatio
 <p align="center">
   <a href="https://github.com/RNA4219/RanD"><b>RanD</b></a>
   &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/code-to-gate"><b>code-to-gate</b></a>
+  <a href="https://github.com/RNA4219/agent-taskstate"><b>agent-taskstate</b></a>
   &nbsp;→&nbsp;
   <a href="https://github.com/RNA4219/harness-auto-test-evidence"><b>HATE</b></a>
   &nbsp;→&nbsp;
   <a href="https://github.com/RNA4219/manual-bb-test-harness"><b>manual-bb</b></a>
   &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/quality-evidence-graph"><b>QEG</b></a>
+  <a href="https://github.com/RNA4219/agent-state-gate"><b>agent-state-gate</b></a>
 </p>
 
 <p align="center">
-  <sub>Research &amp; Requirements → Code Analysis → Automated Testing → Manual Acceptance → Quality Analysis</sub>
+  <sub>Research &amp; Requirements → Agent Operations → Automated Testing → Manual Acceptance → Decision Gate</sub>
 </p>
 
 - [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) supplies runtime exploration and reproducible execution results.
 - [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) supplies reusable workflows, acceptance assets, and CI practices across the stack.
-- [shipyard-cp](https://github.com/RNA4219/shipyard-cp) coordinates agent-assisted work across planning, development, acceptance, integration, and publishing.
+- [agent-state-gate](https://github.com/RNA4219/agent-state-gate) makes the final pass / hold / deny decision on agent work from evidence, SLA state, and policy.
 
 | Layer | Repository | Responsibility |
 |---|---|---|
 | Research & Requirements | [RanD](https://github.com/RNA4219/RanD) | Research, hypothesis formation, requirement discovery, and acceptance framing. |
 | Workflow Assets | [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) | Task Seeds, acceptance workflows, reusable CI, and development practices. |
-| Agent Operations | [shipyard-cp](https://github.com/RNA4219/shipyard-cp) | Coordinates agent-assisted work across planning, development, acceptance, integration, and publishing. |
-| Code Analysis | [code-to-gate](https://github.com/RNA4219/code-to-gate) | Converts source changes, static signals, architecture checks, and repository risk into reviewable results. |
+| Agent Operations | [agent-taskstate](https://github.com/RNA4219/agent-taskstate) | Manages agent task state with explicit, validated state transitions. |
 | Runtime Exploration | [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) | Explores software behavior and produces reproducible runtime results. |
 | Automated Testing | [harness-auto-test-evidence](https://github.com/RNA4219/harness-auto-test-evidence) | Normalizes automated test results for downstream use. |
 | Manual Acceptance | [manual-bb-test-harness](https://github.com/RNA4219/manual-bb-test-harness) | Supports risk-based manual black-box testing and acceptance review. |
 | Quality Analysis | [quality-evidence-graph](https://github.com/RNA4219/quality-evidence-graph) | Connects requirements, risks, changes, tests, and review results for quality assessment. |
+| Decision Gate | [agent-state-gate](https://github.com/RNA4219/agent-state-gate) | Decides pass / hold / deny for agent work from evidence, SLA state, and policy. |
 
 ## Current Work
 
