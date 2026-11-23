@@ -2,6 +2,14 @@
 
 公開先は [github.com/RNA4219](https://github.com/RNA4219) です。本文は [Readme.md](../Readme.md) を直接編集してmainに反映します。固定リポジトリはGitHubプロフィールの「Customize your pins」で選びます。
 
+## 冒頭の波形
+
+冒頭の画像を押すと、自作ラジオ「DEAD AIR FM」が開きます。波形は87.9 MHzの「Midnight Circuit」から、3小節目と4小節目を切り出したものです。針は曲のテンポ（128 BPM）に合わせて3.75秒で一周します。端末で動きを減らす設定にしている場合は静止画を表示します。
+
+作業台に上がる湯気の横で名前が読める [skulitomのプロフィール](https://github.com/skulitom) と、リポジトリを放送中の曲に見立てた [OthmanAdiのCommit FM](https://github.com/OthmanAdi/commit-fm) を参考にしました。名前は固定し、曲に合わせて針とその周囲の波形だけが動きます。
+
+[音源を含むHTML](https://github.com/RNA4219/anything-frontend-art-direction/blob/f39c407d2f9d79dd931023abd61dd53e81945fb6/examples/dead-air-fm/index.html) を使って画像を作り直せます。PythonにNumPyとPillowをインストールし、FFmpegをパスに通してから `python profile/render_radio.py <index.htmlのパス>` を実行してください。
+
 ## 旧バナーの制作記録と判定図の編集
 
 表紙の[光跡の原画](moss-signal.webp)はDGX Spark上のComfyUIでMOSS Image SFTを使って生成しました。[生成に使ったAPI形式のワークフロー](moss-signal-api.json)にはプロンプト、モデル名、seed（421937）、サイズ（1408×608）、サンプリング条件を収めています。同じモデルのあるComfyUIの `/prompt` にこのJSONをPOSTすると生成できます。名前と肩書きは [render_sleeve.py](render_sleeve.py) で後から組みます。

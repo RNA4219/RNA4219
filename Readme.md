@@ -1,3 +1,12 @@
+<a href="https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/">
+  <picture>
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave-mobile.png">
+    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave.png">
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave-mobile.gif">
+    <img src="./assets/radio-wave.gif" width="100%" alt="R_N_A · AI CONDUCTOR。DEAD AIR FMを開いて87.9 MHzの「Midnight Circuit」を聴く">
+  </picture>
+</a>
+
 AIコンダクターの R_N_A です。論文を追うための道具を作ったり、Android端末で言語モデルを動かしたりしています。趣味の創作にもAIを使います。
 
 画面のデザインをAIに任せたくて、美術館のサイトやゲームの画面を調べてもらいました。書体の選び方や余白の取り方について、制作者自身が語った理由を集め、AIが次の画面を作るときに参照できるスキルにしました。[Anything Frontend Art Directionのスキルと作例](https://github.com/RNA4219/anything-frontend-art-direction)
