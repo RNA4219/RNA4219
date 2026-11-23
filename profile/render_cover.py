@@ -10,7 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).resolve().parent
 ASSETS = HERE.parent / "assets"
 FIXTURES = "https://raw.githubusercontent.com/RNA4219/quality-evidence-graph/v0.4.2/fixtures"
-PAPER, INK, RULE, ACCENT = "#202669", "#fff2db", "#8994be", "#ffad87"
+PAPER, INK, RULE, ACCENT = "#101124", "#fafaff", "#9199bd", "#c0acff"
 SERIF = HERE / "fonts/InstrumentSerif-Regular.ttf"
 SANS = HERE / "fonts/BarlowCondensed-SemiBold.ttf"
 
