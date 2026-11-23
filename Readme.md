@@ -1,9 +1,9 @@
 <a href="https://github.com/RNA4219/quality-evidence-graph">
   <picture>
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-mobile-still.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-still.svg">
-    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-mobile.svg">
-    <img src="./assets/profile-card.svg" width="100%" alt="R_N_A · AI Conductor　技術の代表作 Quality Evidence Graph を開く">
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-mobile-still.svg?v=2">
+    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-still.svg?v=2">
+    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/profile-card-mobile.svg?v=2">
+    <img src="./assets/profile-card.svg?v=2" width="100%" alt="R_N_A · AI Conductor　技術の代表作 Quality Evidence Graph を開く">
   </picture>
 </a>
 

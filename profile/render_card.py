@@ -36,6 +36,38 @@ def lettering(parent, font, label, x, y, size, color, tracking=0):
     return advance * size / em
 
 
+def travelling_light(group, defs, halves, compact, animated):
+    """帯の中心を往復する一本の経路を、光点とその尾で共有する。"""
+    tip = halves * 44
+    turns = halves // 2
+    outward = "c21 0 22 48 44 48 c21 0 22 -48 44 -48"
+    returning = "c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48"
+    path = " ".join(["M0 -24"] + [outward] * turns + ["c36 0 36 48 0 48"] + [returning] * turns)
+    # 一本の帯の半分を進んだ位置は、折り返しのいちばん外側。静止版にもここで光を当てる。
+    timing = {"dur": "4s", "begin": "-2s", "repeatCount": "indefinite"}
+    for length, width, color in ((8, 6, "#9e7bff"), (4, 5, "#d3c2ff"), (1.2, 4, "#fffaff")):
+        trail = add(group, "path", d=path, pathLength=100, fill="none", stroke=color,
+                    stroke_width=width * (1.45 if compact else 1), stroke_linecap="round",
+                    stroke_dasharray=f"{length} {110 - length:g}", stroke_dashoffset=length - 50)
+        if animated:
+            add(trail, "animate", attributeName="stroke-dashoffset",
+                values=f"{length};{length - 100:g}", **timing)
+
+    halo = add(defs, "radialGradient", id="light-halo")
+    for offset, color, opacity in ((0, "#ffffff", 1), (.22, "#f7edff", .98),
+                                   (.43, "#c5a1ff", .87), (.68, "#9973ff", .42), (1, "#835bff", 0)):
+        add(halo, "stop", offset=offset, stop_color=color, stop_opacity=opacity)
+    head = add(group, "g")
+    if animated:
+        add(head, "animateMotion", path=path, calcMode="paced", **timing)
+    else:
+        head.set("transform", f"translate({tip + 27} 0)")
+    add(head, "circle", r=25 if compact else 19, fill="url(#light-halo)")
+    core = add(head, "g", transform="scale(1.4)" if compact else "scale(1)")
+    add(core, "path", d="M0 -10 Q1 -2 9 0 Q1 2 0 10 Q-1 2 -9 0 Q-1 -2 0 -10 Z", fill="#fff")
+    add(core, "circle", r=3.1, fill="#fff")
+
+
 def helix(root, defs, compact, animated):
     """一本の帯が先端で折り返す。奥の帯、横桟、手前の帯の順に重ねる。"""
     halves = 2 if compact else 4
@@ -47,11 +79,8 @@ def helix(root, defs, compact, animated):
                        for i in range(halves))
     gradient = add(defs, "linearGradient", id="ribbon-light", x1=0, x2=tip, y1=0, y2=0,
                    gradientUnits="userSpaceOnUse", spreadMethod="reflect")
-    for offset, color in ((0, "#8874f7"), (".42", "#c0b5ff"), (".68", "#f1edff"), (1, "#aa92ff")):
+    for offset, color in ((0, "#7662cf"), (".42", "#a28ce3"), (".68", "#b7a6f3"), (1, "#8a76d2")):
         add(gradient, "stop", offset=offset, stop_color=color)
-    if animated:
-        add(gradient, "animateTransform", attributeName="gradientTransform", type="translate",
-            values=f"0 0;{2 * tip} 0", dur="7s", repeatCount="indefinite")
 
     add(group, "path", d=ribbons, transform="scale(1 -1)", fill="#6966bd")
     for half in range(halves):
@@ -69,7 +98,8 @@ def helix(root, defs, compact, animated):
     add(group, "path", d=ribbons, fill="url(#ribbon-light)")
     for half in range(halves):
         add(group, "path", d="M1 -26 C25 -26 25 21 43 22", transform=f"translate({44 * half})",
-            fill="none", stroke="#e1dbff", stroke_width=.8)
+            fill="none", stroke="#cfc2fa", stroke_width=.8)
+    travelling_light(group, defs, halves, compact, animated)
 
 
 def card(serif, sans, compact, animated):

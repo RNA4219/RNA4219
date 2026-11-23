@@ -2,12 +2,18 @@
   <title id="title">R_N_A · AI Conductor ｜ 技術の代表作 Quality Evidence Graph を開く</title>
   <defs>
     <linearGradient id="ribbon-light" x1="0" x2="176" y1="0" y2="0" gradientUnits="userSpaceOnUse" spreadMethod="reflect">
-      <stop offset="0" stop-color="#8874f7" />
-      <stop offset=".42" stop-color="#c0b5ff" />
-      <stop offset=".68" stop-color="#f1edff" />
-      <stop offset="1" stop-color="#aa92ff" />
-      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;352 0" dur="7s" repeatCount="indefinite" />
+      <stop offset="0" stop-color="#7662cf" />
+      <stop offset=".42" stop-color="#a28ce3" />
+      <stop offset=".68" stop-color="#b7a6f3" />
+      <stop offset="1" stop-color="#8a76d2" />
     </linearGradient>
+    <radialGradient id="light-halo">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="0.22" stop-color="#f7edff" stop-opacity="0.98" />
+      <stop offset="0.43" stop-color="#c5a1ff" stop-opacity="0.87" />
+      <stop offset="0.68" stop-color="#9973ff" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#835bff" stop-opacity="0" />
+    </radialGradient>
   </defs>
   <rect width="960" height="124" fill="#fafaff" />
   <rect width="527" height="124" fill="#101124" />
@@ -31,10 +37,27 @@
     <path d="M166.4 22.1 L170.4 -22.1" stroke="#9697df" stroke-width="2.2" stroke-linecap="round" />
     <path d="M176 -24 c36 0 36 48 0 48" fill="none" stroke="url(#ribbon-light)" stroke-width="5.8" />
     <path d="M0 -27 c26 0 24 48 44 48 v6 c-25 0 -28 -48 -44 -48 z M44 -27 c26 0 24 48 44 48 v6 c-25 0 -28 -48 -44 -48 z M88 -27 c26 0 24 48 44 48 v6 c-25 0 -28 -48 -44 -48 z M132 -27 c26 0 24 48 44 48 v6 c-25 0 -28 -48 -44 -48 z" fill="url(#ribbon-light)" />
-    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(0)" fill="none" stroke="#e1dbff" stroke-width="0.8" />
-    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(44)" fill="none" stroke="#e1dbff" stroke-width="0.8" />
-    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(88)" fill="none" stroke="#e1dbff" stroke-width="0.8" />
-    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(132)" fill="none" stroke="#e1dbff" stroke-width="0.8" />
+    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(0)" fill="none" stroke="#cfc2fa" stroke-width="0.8" />
+    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(44)" fill="none" stroke="#cfc2fa" stroke-width="0.8" />
+    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(88)" fill="none" stroke="#cfc2fa" stroke-width="0.8" />
+    <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(132)" fill="none" stroke="#cfc2fa" stroke-width="0.8" />
+    <path d="M0 -24 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c36 0 36 48 0 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48" pathLength="100" fill="none" stroke="#9e7bff" stroke-width="6" stroke-linecap="round" stroke-dasharray="8 102" stroke-dashoffset="-42">
+      <animate attributeName="stroke-dashoffset" values="8;-92" dur="4s" begin="-2s" repeatCount="indefinite" />
+    </path>
+    <path d="M0 -24 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c36 0 36 48 0 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48" pathLength="100" fill="none" stroke="#d3c2ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 106" stroke-dashoffset="-46">
+      <animate attributeName="stroke-dashoffset" values="4;-96" dur="4s" begin="-2s" repeatCount="indefinite" />
+    </path>
+    <path d="M0 -24 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c36 0 36 48 0 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48" pathLength="100" fill="none" stroke="#fffaff" stroke-width="4" stroke-linecap="round" stroke-dasharray="1.2 108.8" stroke-dashoffset="-48.8">
+      <animate attributeName="stroke-dashoffset" values="1.2;-98.8" dur="4s" begin="-2s" repeatCount="indefinite" />
+    </path>
+    <g>
+      <animateMotion path="M0 -24 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c36 0 36 48 0 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48" calcMode="paced" dur="4s" begin="-2s" repeatCount="indefinite" />
+      <circle r="19" fill="url(#light-halo)" />
+      <g transform="scale(1)">
+        <path d="M0 -10 Q1 -2 9 0 Q1 2 0 10 Q-1 2 -9 0 Q-1 -2 0 -10 Z" fill="#fff" />
+        <circle r="3.1" fill="#fff" />
+      </g>
+    </g>
   </g>
   <g transform="translate(24 80) scale(0.098 -0.098)" fill="#fafaff">
     <path d="M450 -9Q363 -9 339 105L316 216Q305 270 291.5 298.0Q278 326 254.5 336.0Q231 346 190 346Q176 346 168.0 338.5Q160 331 160 320V70Q160 49 168.0 41.5Q176 34 204 29L241 23Q252 21 252 12Q252 0 237 0H34Q19 0 19 11Q19 20 32 23L55 27Q76 31 82.5 38.0Q89 45 89 66V654Q89 675 82.5 682.0Q76 689 55 693L32 697Q19 700 19 709Q19 720 34 720H237Q296 720 342.0 697.0Q388 674 414.0 633.5Q440 593 440 540Q440 477 402.0 426.5Q364 376 306 355Q299 353 298.5 348.5Q298 344 305 341Q337 326 355.5 299.0Q374 272 384 227L406 125Q417 73 432.0 51.0Q447 29 470 29Q478 29 484.5 31.5Q491 34 501 41Q509 46 516.0 43.5Q523 41 523 33Q523 16 501.0 3.5Q479 -9 450 -9ZM227 371Q295 371 330.0 416.5Q365 462 365 538Q365 612 324.5 653.5Q284 695 213 695Q160 695 160 655V426Q160 371 227 371Z" transform="translate(0)" />
