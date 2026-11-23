@@ -4,7 +4,7 @@
   <img src="./assets/rna-sleeve.webp" alt="AIコンダクター R_N_A。紙テープに赤鉛筆を入れる手。掲載作品は Quality Evidence Graph と DEAD AIR FM。">
 </picture>
 
-**AIコンダクターの R_N_A です。** 論文を追う仕組みを作ったり、Android実機で言語モデルを動かしたりしています。音楽も作ります。
+**AIコンダクターの R_N_A です。** 論文を追う仕組みを作ったり、Android実機で言語モデルを動かしたりしています。趣味でAIを利用した創作もします。
 
 AIに画面のデザインを任せるために、美術館のサイトやゲームの画面を調べさせました。どの書体を選んだのか。なぜその余白を取ったのか。制作者が語った理由を、AIが次の画面を作るときにも参照できるようにしたのが **Anything Frontend Art Direction** です。[スキルと作例を見る](https://github.com/RNA4219/anything-frontend-art-direction)
 
