@@ -1,12 +1,6 @@
 # プロフィールを更新する
 
-公開先は [github.com/RNA4219](https://github.com/RNA4219) です。本文は [template.md](template.md)、リリースの掲載対象は [update_readme.py](update_readme.py) の `PROJECTS` で編集します。生成した `Readme.md` はリポジトリ直下に置きます。
-
-## 本文とリリース
-
-テンプレートか生成スクリプトをmainへ反映すると、GitHub Actionsが掲載作品の最新正式リリースを取得し、公開日の新しい順に並べます。毎日04:17（日本時間）にも実行を予定しています。手動更新は [Actionsの「Run workflow」](https://github.com/RNA4219/RNA4219/actions/workflows/profile.yml) から実行できます。内容が変わった回だけコミットします。取得に失敗した場合は、前回のREADMEを保持します。
-
-ローカルで本文を生成するには、リポジトリのルートで `python profile/update_readme.py` を実行します。Python 3.9以上の標準ライブラリを使います。
+公開先は [github.com/RNA4219](https://github.com/RNA4219) です。本文は [Readme.md](../Readme.md) を直接編集してmainに反映します。固定リポジトリはGitHubプロフィールの「Customize your pins」で選びます。
 
 ## 表紙と判定図の編集
 

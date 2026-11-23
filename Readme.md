@@ -1,4 +1,3 @@
-<!-- このREADMEは profile/template.md から生成しています。 -->
 <picture>
   <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/rna-sleeve-mobile.webp">
   <img src="./assets/rna-sleeve.webp" alt="AIコンダクター R_N_A。紙テープに赤鉛筆を入れる手。掲載作品は Quality Evidence Graph と DEAD AIR FM。">
@@ -36,9 +35,3 @@ CLI、Node.js API、GitHub Actionsで同じRustの判定ロジックを使いま
 [![DEAD AIR FMを開く。ピンクの局名と、シアンのジャケットを着たDJの選局画面。](https://raw.githubusercontent.com/RNA4219/anything-frontend-art-direction/main/docs/dead-air-fm.webp)](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
 
 87.9 MHzはダークエレクトロ。92.4 MHzに合わせると周波数表示が一瞬乱れ、アンビエントダブに切り替わります。YuE2で作った3曲とイラストを、一枚のHTMLに収めました。[放送を聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/) · [制作に使ったデザインスキル](https://github.com/RNA4219/anything-frontend-art-direction)
-
-## 最近のリリース
-
-- 2026-11-18　<a href="https://github.com/RNA4219/quality-evidence-graph/releases/tag/v0.4.2">Quality Evidence Graph · v0.4.2</a>
-- 2026-10-24　<a href="https://github.com/RNA4219/llm-atelier/releases/tag/v1.3.0">LLM Atelier · v1.3.0</a>
-- 2026-07-11　<a href="https://github.com/RNA4219/RanD/releases/tag/v0.3.0">RanD · v0.3.0</a>
