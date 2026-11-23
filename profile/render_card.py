@@ -37,35 +37,25 @@ def lettering(parent, font, label, x, y, size, color, tracking=0):
 
 
 def travelling_light(group, defs, halves, compact, animated):
-    """帯の中心を往復する一本の経路を、光点とその尾で共有する。"""
+    """白い丸が帯の両端で減速し、来た道を戻る。"""
     tip = halves * 44
-    turns = halves // 2
-    outward = "c21 0 22 48 44 48 c21 0 22 -48 44 -48"
-    returning = "c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48"
-    path = " ".join(["M0 -24"] + [outward] * turns + ["c36 0 36 48 0 48"] + [returning] * turns)
-    # 一本の帯の半分を進んだ位置は、折り返しのいちばん外側。静止版にもここで光を当てる。
-    timing = {"dur": "4s", "begin": "-2s", "repeatCount": "indefinite"}
-    for length, width, color in ((8, 6, "#9e7bff"), (4, 5, "#d3c2ff"), (1.2, 4, "#fffaff")):
-        trail = add(group, "path", d=path, pathLength=100, fill="none", stroke=color,
-                    stroke_width=width * (1.45 if compact else 1), stroke_linecap="round",
-                    stroke_dasharray=f"{length} {110 - length:g}", stroke_dashoffset=length - 50)
-        if animated:
-            add(trail, "animate", attributeName="stroke-dashoffset",
-                values=f"{length};{length - 100:g}", **timing)
-
     halo = add(defs, "radialGradient", id="light-halo")
-    for offset, color, opacity in ((0, "#ffffff", 1), (.22, "#f7edff", .98),
-                                   (.43, "#c5a1ff", .87), (.68, "#9973ff", .42), (1, "#835bff", 0)):
-        add(halo, "stop", offset=offset, stop_color=color, stop_opacity=opacity)
+    for offset, opacity in ((0, .45), (.45, .30), (1, 0)):
+        add(halo, "stop", offset=offset, stop_color="#eceaff", stop_opacity=opacity)
     head = add(group, "g")
     if animated:
-        add(head, "animateMotion", path=path, calcMode="paced", **timing)
+        turns = halves // 2
+        outward = "c21 0 22 48 44 48 c21 0 22 -48 44 -48"
+        returning = "c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48"
+        path = " ".join(["M0 -24"] + [outward] * turns + ["c36 0 36 48 0 48"] + [returning] * turns)
+        add(head, "animateMotion", path=path, dur="24s", begin="-6s", repeatCount="indefinite",
+            calcMode="spline", keyTimes="0;.5;1", keyPoints="0;1;0",
+            keySplines=".18 0 .82 1;.18 0 .82 1")
     else:
         head.set("transform", f"translate({tip + 27} 0)")
-    add(head, "circle", r=25 if compact else 19, fill="url(#light-halo)")
-    core = add(head, "g", transform="scale(1.4)" if compact else "scale(1)")
-    add(core, "path", d="M0 -10 Q1 -2 9 0 Q1 2 0 10 Q-1 2 -9 0 Q-1 -2 0 -10 Z", fill="#fff")
-    add(core, "circle", r=3.1, fill="#fff")
+    radius = 6 if compact else 4
+    add(head, "circle", r=radius * 2.1, fill="url(#light-halo)")
+    add(head, "circle", r=radius, fill="#fff")
 
 
 def helix(root, defs, compact, animated):
