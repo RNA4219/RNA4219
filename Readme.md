@@ -1,83 +1,17 @@
-<p align="center">
-  <img
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,100:1c2128&height=180&section=header&text=AI%20Conductor&fontSize=40&fontAlignY=38&fontColor=ffffff"
-    alt="AI Conductor"
-  />
-</p>
+# R_N_A ｜ AIコンダクター
 
-<h3 align="center">Autonomous R&amp;D Systems Engineer / Harness Engineer</h3>
+作りたいものに合わせてAIと道具を選び、どの仕事を任せるか、どこで自分が確かめるかを決めています。工程をつなぐ道具や、結果を検証する仕組みも自分で作ります。
 
-<p align="center">
-  Agent tooling · Verification harnesses · Control planes · Quality infrastructure
-</p>
+## 技術の代表作　Quality Evidence Graph（QEG）
 
-## About
+テストが通ったとき、その結果を根拠に「この変更はリリースしてよい」と言えるのは、どんなときか。QEGは、要求、コードの変更、リスク、テスト、実行記録を一つのグラフに結び、リリースの可否とその理由を示すツールです。[QEGの概要と使い方](https://github.com/RNA4219/quality-evidence-graph/blob/main/README_JA.md)
 
-AIを活用した研究・開発のための実行基盤、検証ハーネス、品質ツールを設計・実装しています。
+たとえば、ログインの手動テストをいつ廃止できるか。公開例では、後継のE2Eテストが同じリスクをカバーし、基準の3回を超えて5回連続で成功しています。手動テストに戻す条件も記録され、判定は `go` です。後継として登録したテストの実体が手動のままなら、QEGはその矛盾を指摘し、`disqualified` を返します。[廃止を認める例](https://github.com/RNA4219/quality-evidence-graph/tree/main/fixtures/positive-placement-change-retirement) · [矛盾を検出する例](https://github.com/RNA4219/quality-evidence-graph/blob/main/fixtures/negative-retirement-manual-replacement/expected-gate-verdict.json)
 
-QA / SDETを土台に、曖昧な要求を実行可能なワークフローへ落とし込み、コード分析、テスト、自動化、結果整理までを接続することが主な関心領域です。公開リポジトリでは、実際の開発で再利用できる単位へ分割したツールと運用資産を公開しています。
+判定ロジックはRustで実装し、CLI、Node.js API、GitHub Actionsで共有しています。Node.jsからRustを直接呼び出すようにしたところ、Windows x64で同じサンプルを繰り返し判定した際の中央値は、1回あたり11.38 msから0.144 msになりました。[実装と計測条件](https://github.com/RNA4219/quality-evidence-graph/pull/19)
 
-**AI Conductor** は、複数のAI、ツール、工程を目的に合わせて編成し、継続的な成果へつなげる立場を表す、自分なりの呼称です。
+## ほかに作っているもの
 
-I build practical infrastructure for AI-assisted R&D: agent tooling, verification harnesses, control planes, and quality workflows.
-
-## Eight Repositories, One Engineering Stack
-
-以下は独立したデモの寄せ集めではなく、調査・要求整理から検証と品質判断までを支えるツール群です。
-
-<p align="center">
-  <a href="https://github.com/RNA4219/RanD"><b>RanD</b></a>
-  &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/agent-taskstate"><b>agent-taskstate</b></a>
-  &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/harness-auto-test-evidence"><b>HATE</b></a>
-  &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/manual-bb-test-harness"><b>manual-bb</b></a>
-  &nbsp;→&nbsp;
-  <a href="https://github.com/RNA4219/agent-state-gate"><b>agent-state-gate</b></a>
-</p>
-
-<p align="center">
-  <sub>Research &amp; Requirements → Agent Operations → Automated Testing → Manual Acceptance → Decision Gate</sub>
-</p>
-
-- [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) supplies runtime exploration and reproducible execution results.
-- [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) supplies reusable workflows, acceptance assets, and CI practices across the stack.
-- [agent-state-gate](https://github.com/RNA4219/agent-state-gate) makes the final pass / hold / deny decision on agent work from evidence, SLA state, and policy.
-
-| Layer | Repository | Responsibility |
-|---|---|---|
-| Research & Requirements | [RanD](https://github.com/RNA4219/RanD) | Research, hypothesis formation, requirement discovery, and acceptance framing. |
-| Workflow Assets | [workflow-cookbook](https://github.com/RNA4219/workflow-cookbook) | Task Seeds, acceptance workflows, reusable CI, and development practices. |
-| Agent Operations | [agent-taskstate](https://github.com/RNA4219/agent-taskstate) | Manages agent task state with explicit, validated state transitions. |
-| Runtime Exploration | [domain-lakda-runner](https://github.com/RNA4219/domain-lakda-runner) | Explores software behavior and produces reproducible runtime results. |
-| Automated Testing | [harness-auto-test-evidence](https://github.com/RNA4219/harness-auto-test-evidence) | Normalizes automated test results for downstream use. |
-| Manual Acceptance | [manual-bb-test-harness](https://github.com/RNA4219/manual-bb-test-harness) | Supports risk-based manual black-box testing and acceptance review. |
-| Quality Analysis | [quality-evidence-graph](https://github.com/RNA4219/quality-evidence-graph) | Connects requirements, risks, changes, tests, and review results for quality assessment. |
-| Decision Gate | [agent-state-gate](https://github.com/RNA4219/agent-state-gate) | Decides pass / hold / deny for agent work from evidence, SLA state, and policy. |
-
-## Current Work
-
-I am continuing to integrate and extend these tools through private R&D projects.
-
-プロジェクト固有の構成、運用方式、進捗詳細は公開せず、単独でも再利用価値を持つ部分だけをOSSとして切り出しています。
-
-## Open Source Approach
-
-- Build from concrete development and QA problems.
-- Keep each repository independently understandable and usable.
-- Include tests, examples, documentation, and CI with the implementation.
-- Separate reusable public components from project-specific integration.
-- Prefer working software and reproducible examples over broad claims.
-
-## Focus Areas
-
-`Autonomous R&D Systems` · `Agent Tooling` · `Harness Engineering` · `Control Planes` · `Quality Infrastructure` · `Developer Workflows` · `Test Automation` · `LLM-native Development`
-
-## Core Stack
-
-- **Languages:** Python, TypeScript / JavaScript, SQL, Bash
-- **Interfaces & Data:** JSON Schema, SQLite, REST APIs, CLI tools, structured outputs
-- **QA & Automation:** pytest, Playwright, Airtest, Jest / Vitest, coverage, CodeQL, GitHub Actions
-- **Runtime & Infrastructure:** Docker / OCI containers, devcontainers, async processing, local-first tooling
-- **LLM Systems:** OpenAI-compatible APIs, local LLMs, llama.cpp / Ollama, routing and orchestration tooling
+- **RanD** は、論文やAIニュースの調査から、得られた知見の整理、評価、通知までをつなぐツールです。調査を1回実行すると、結果をMarkdownのレポートで読めます。[実装と実行例](https://github.com/RNA4219/RanD)
+- **LLM Atelier** は、Android端末で動くローカルAIアプリです。Snapdragon 8 Gen 3搭載のnubia実機で、会話モデルの全43層をNPUに載せ、日本語で返事が来ることを確かめました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
+- **DEAD AIR FM** は、架空の深夜ラジオ局です。選局すると周波数表示が一瞬乱れ、次の曲に切り替わります。YuE2で生成した3曲とイラストを1枚のHTMLに収めました。[ブラウザーで選局して聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
