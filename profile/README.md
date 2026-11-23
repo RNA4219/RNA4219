@@ -8,18 +8,25 @@
 
 ローカルで本文を生成するには、リポジトリのルートで `python profile/update_readme.py` を実行します。Python 3.9以上の標準ライブラリを使います。
 
-## 表紙を組み直す
+## 表紙と判定図の編集
 
-譜面の出典はQEG v0.4.2の[手動テストを廃止できる例](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/positive-placement-change-retirement)と[後継も手動だった例](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/negative-retirement-manual-replacement)です。連続成功回数・判定基準・失格理由を同じ版から取得します。この例の版は固定し、配布中の最新版は本文で更新します。
+表紙の原画は [press-hand.webp](press-hand.webp) です。ImageGenで作った、紙テープの記録に赤鉛筆を入れる手の挿絵です。文字と絵の位置、名前の二本の下線の色は [render_sleeve.py](render_sleeve.py) で編集します。
 
-表紙を変更するときは、Python 3.11とPillow 12.1.1を用意し、`python profile/render_cover.py` を実行します。出力は `assets/qeg-score.png` と `assets/qeg-score-mobile.png` です。日本語の説明、根拠へのリンク、画像の代替テキストはテンプレートにあります。
+Python 3.11とPillow 12.1.1を用意し、リポジトリのルートで次を実行します。
+
+```sh
+python profile/render_sleeve.py
+```
+
+PC用の `assets/rna-sleeve.webp` と狭幅用の `assets/rna-sleeve-mobile.webp` ができます。生成画像もコミットしてください。書体は [Instrument Serif](https://github.com/google/fonts/tree/main/ofl/instrumentserif)・[利用条件](fonts/InstrumentSerif-OFL.txt) と [Barlow Condensed](https://github.com/google/fonts/tree/main/ofl/barlowcondensed)・[利用条件](fonts/BarlowCondensed-OFL.txt) を同梱しています。画像を表示できないときも名前・肩書き・二つのリンクを本文から読めます。
+
+QEGの節を開くと表示される譜面は別の図です。`python profile/render_cover.py` を実行すると、QEG v0.4.2の[成功例](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/positive-placement-change-retirement)と[失格例](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/negative-retirement-manual-replacement)からPC用と狭幅用のPNGを生成します。事例の版は固定しています。
 
 ## 意匠の根拠
 
-[Anything Frontend Art Direction](https://github.com/RNA4219/anything-frontend-art-direction) の手順で「代表作と判定理由を見つけ、その実装を開く」を入口の目的にしました。CINRAの青森県立美術館サイト制作記録では、固有の文字をメインナビゲーションに用いています。掲載された狭幅画面で大きな「美術館に行く」の直下に案内リンクが並ぶ構成を確認し、作品名と実装・入力・出力へのリンクを隣接させました。[制作記録](https://www.cinra.co.jp/work/aomorikenbi)
+初めて訪れた人がR_N_Aの仕事を一文でつかみ、技術に興味があればQEGの実装を、制作に興味があればラジオを開ける順にしました。QEGは技術の代表作として本文の最初に置きました。
 
-山崎晴太郎『余白のための楽譜 #01』では、演奏中の音と音の断片が別々の画面に投影されます。制作写真では中央と左右で異なる形が見えます。ここから、実データで形を決める考え方を取り入れました。QEGの五つの点は成功5回、下の括弧は基準3回、切れ目は自動化の根拠が欠けた箇所です。[作者の解説と展示写真](https://seiyamazaki.com/artworks/music-for-the-margin/)
-
-写真を表紙にして判定を次の図で見せる案と、作品名と判定を一枚に組む案を同じ本文で比較しました。後者では、スマートフォンのREADME先頭でも作品名と二つの判定がそろいます。点を外すと成功回数を数えにくくなるため、譜面には点を残しました。
-
-作品名はInstrument Serifを使っています。同じ大きさでTimes New Romanと組み比べると字幅が狭く、作品名の隣に判定を並べる余白が取れました。作者名と判定のラベルはBarlow Condensedです。同梱書体の出典とライセンスは [Instrument Serif](https://github.com/google/fonts/tree/main/ofl/instrumentserif)・[利用条件](fonts/InstrumentSerif-OFL.txt)、[Barlow Condensed](https://github.com/google/fonts/tree/main/ofl/barlowcondensed)・[利用条件](fonts/BarlowCondensed-OFL.txt)を参照してください。
+- **本人をどう紹介するか。** Maggie Appletonは、自身の仕事をデザイン・人類学・開発にまたがるものと説明しています。本人のサイトを開くと、最も大きな一文では何を作る人かを動詞で語り、肩書きはその下にあります。ここから、名前と「AIに何を任せ、何を自分で確かめるか」を先に読める構成を取り入れました。[トップ](https://maggieappleton.com/)・[本人の説明](https://maggieappleton.com/about)
+- **色をどこに使うか。** 作者自身のDEAD AIR FMでは、ヘッドホンのコードと局名がピンク、ジャケットと再生操作がシアンです。公開画面と制作記録を照合しました。表紙では赤鉛筆の朱を、R_N_Aの名前に元からある二本の下線に拾っています。紙テープに赤を入れる仕草には、出力を自分で確かめる姿を重ねました。[実際の放送画面](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)・[制作記録](https://github.com/RNA4219/anything-frontend-art-direction#readme)
+- **名前をどう組むか。** モバイル表紙の同じ位置に、同じ115pxで `R_N_A` を組みました。Times New Romanでは幅359pxになり、末尾のAが挿絵にかかります。Instrument Serifは260pxで、名前を大きくしながら黒地に余白を残せるため採用しました。
+- **採用と棄却。** 同じ名前・肩書き・二作品・本文で、手を大きく置く見開きと、作品名を二段に並べて挿絵を添える目録を、GitHubの本文幅846pxと308pxで比較しました。目録は二作を拾いやすく、見開きは狭幅でも鉛筆の先と紙の赤丸が残ります。見開きを採り、作品を選ぶ操作には直下のテキストリンクを使いました。名前の下線を紙色に戻した版でも情報は同じですが、筆先の朱が名前へ続く印象が消えるため、少しずらした朱の重ねを残しています。

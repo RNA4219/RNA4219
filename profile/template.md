@@ -1,31 +1,42 @@
 <!-- このREADMEは profile/template.md から生成しています。 -->
 <picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/qeg-score-mobile.png">
-  <img src="./assets/qeg-score.png" alt="R_N_A ｜ AIコンダクター。技術の代表作 Quality Evidence Graph。ログインテストの公開例では、E2Eの5回連続成功と、後継も手動のため失格となったケースを比較できます。">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/rna-sleeve-mobile.webp">
+  <img src="./assets/rna-sleeve.webp" alt="AIコンダクター R_N_A。紙テープに赤鉛筆を入れる手。掲載作品は Quality Evidence Graph と DEAD AIR FM。">
 </picture>
 
-**[Quality Evidence Graph の実装を開く](https://github.com/RNA4219/quality-evidence-graph)** · [成功例の入力](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/positive-placement-change-retirement) · [失格理由の出力](https://github.com/RNA4219/quality-evidence-graph/blob/v0.4.2/fixtures/negative-retirement-manual-replacement/expected-gate-verdict.json)
+**AIコンダクターの R_N_A です。** 論文を追うときも、深夜ラジオの曲を作るときも、どのAIに何を任せ、何を自分で確かめるかを決めています。
 
-**AIコンダクターのR_N_Aです。** 論文を調べるときも、曲の流れるWeb作品を作るときも、どのAIに何を任せ、何を自分で確かめるかを決めています。必要な道具は自分で作ります。
+[QEGのコードを読む](https://github.com/RNA4219/quality-evidence-graph)　／　[ラジオを聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
 
 ## 技術の代表作 · Quality Evidence Graph
 
-**ログインの手動テストを、いつ廃止していいか。** QEGは、変更・リスク・テスト・実行記録を結び、リリースの可否とその理由を返します。[QEGの設計と使い方](https://github.com/RNA4219/quality-evidence-graph/blob/main/README_JA.md)
+**ログインの手動テストを、いつ廃止していいか。** 自動テストが通っても、これまで人が確かめていたリスクを引き継げたかは別に確かめたい。そこで、変更・リスク・テスト・実行記録をつなぎ、リリースの可否とその理由を返すQEGを作りました。
 
-表紙の譜面は、QEGの公開サンプルを図にしたものです。上段の一点がE2Eテストの成功1回、括弧が基準の3回です。同じリスクを検証して5回連続で成功し、手動に戻す条件も記録された例は `go`。下段は、後継テストの実体がまだ手動だった例です。自動化の根拠が途切れ、`DQ-14` で失格になります。
+公開例では、同じリスクを自動テストで5回連続検証し、手動に戻す条件も記録できたケースに `go` が出ます。後継テストがまだ手動だったケースは `DQ-14` で失格です。[成功例の入力](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/positive-placement-change-retirement) · [失格理由の出力](https://github.com/RNA4219/quality-evidence-graph/blob/v0.4.2/fixtures/negative-retirement-manual-replacement/expected-gate-verdict.json)
 
-判定ロジックはRustで実装し、CLI、Node.js API、GitHub Actionsで共有しています。Node.jsからRustを直接呼び出すようにすると、Windows x64で同じサンプルを繰り返し判定したときの中央値は **11.38 ms → 0.144 ms** になりました。[実装と計測条件](https://github.com/RNA4219/quality-evidence-graph/pull/19)
+<details>
+<summary>2件の判定図と、Rust実装の計測結果を見る</summary>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/qeg-score-mobile.png">
+  <img src="./assets/qeg-score.png" alt="上段の5点はE2Eテストの連続成功、括弧は基準の3回。下段の切れ目は、後継が手動で失格になったケース。">
+</picture>
+
+CLI、Node.js API、GitHub Actionsで同じRustの判定ロジックを使います。Node.jsからRustを直接呼ぶ実装では、Windows x64で同じサンプルを繰り返し判定したときの中央値が **11.38 ms → 0.144 ms** になりました。[実装と計測条件](https://github.com/RNA4219/quality-evidence-graph/pull/19) · [QEGの設計と使い方](https://github.com/RNA4219/quality-evidence-graph/blob/main/README_JA.md)
+
+</details>
+
+## 音楽と画面 · DEAD AIR FM
+
+[![DEAD AIR FMを開く。ピンクの局名と、シアンのジャケットを着たDJの選局画面。](https://raw.githubusercontent.com/RNA4219/anything-frontend-art-direction/main/docs/dead-air-fm.webp)](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
+
+87.9 MHzはダークエレクトロ。92.4 MHzに合わせると周波数表示が一瞬乱れ、アンビエントダブに切り替わります。YuE2で作った3曲とイラストを、一枚のHTMLに収めました。[放送を聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/) · [制作に使ったデザインスキル](https://github.com/RNA4219/anything-frontend-art-direction)
+
+## 調査と実機
+
+- **RanD** で論文やAIニュースを集め、評価した結果をMarkdownで読めるようにしています。[調査を実行する](https://github.com/RNA4219/RanD#readme)
+- **LLM Atelier** では、Android端末でローカルAIを動かしています。Snapdragon 8 Gen 3搭載のnubia実機で、会話モデルの全43層をNPUに載せ、日本語の応答を確かめました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
 
 ## 最近のリリース
 
 {{releases}}
-
-## 研究と制作
-
-**RanD** では、論文やAIニュースの調査から知見の整理、評価、通知までをつないでいます。一度実行すると、調査結果をMarkdownで読めます。[調査を実行する](https://github.com/RNA4219/RanD#readme)
-
-**LLM Atelier** は、Android端末で動くローカルAIアプリです。Snapdragon 8 Gen 3搭載のnubia実機で、会話モデルの全43層をNPUに載せ、日本語の応答を確かめました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
-
-**DEAD AIR FM** は、選局すると周波数表示が乱れ、次の曲が流れる架空の深夜ラジオ局。自作のデザインスキルとMotion Atlasを使い、YuE2で作った3曲とイラストを1枚のHTMLに収めました。[ブラウザーで選局して聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/) · [制作に使ったスキル](https://github.com/RNA4219/anything-frontend-art-direction)
-
-<a href="https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/"><img src="https://raw.githubusercontent.com/RNA4219/anything-frontend-art-direction/main/docs/dead-air-fm.webp" width="500" alt="DEAD AIR FMを開く。ヘッドホンを着けたDJと選局画面。"></a>
