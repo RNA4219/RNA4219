@@ -1,0 +1,103 @@
+{
+  "prompt": {
+    "1": {
+      "class_type": "UNETLoader",
+      "inputs": {
+        "unet_name": "moss_image_sft_int8_convrot.safetensors",
+        "weight_dtype": "default"
+      }
+    },
+    "2": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "qwen3.5_9b_w4a8_gptq.safetensors",
+        "type": "moss_image",
+        "device": "default"
+      }
+    },
+    "3": {
+      "class_type": "VAELoader",
+      "inputs": {
+        "vae_name": "flux2-vae_small.safetensors"
+      }
+    },
+    "4": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "Panoramic album cover artwork, one continuous landscape composition. A kinetic light sculpture in a dark performance space, captured as a long-exposure art photograph. At the RIGHT side, a thick luminous bundle of closely spaced fine cyan, ivory, and hot vermilion light traces is folded into an extraordinary three-dimensional sweeping fan; the strands turn sharply together, open into a delicate broadly spaced fan, then cross again in a bright knot. Each individual strand has a hairline-sharp trailing edge and a brighter point, as if multiple signals were brought into phase by a single gesture. Spare matte midnight-blue ground, etched line quality, beautifully intentional rhythmic gaps, graphic Japanese electronic record art, elegant and boldly asymmetric. LEFT third is deep clean shadow for typography; most of the curves occupy the centre and right. Not a landscape scene. No holographic interfaces, no generic circuit boards, no gradient blobs, no words, no symbols, no logos, no humans, no lettering.",
+        "clip": [
+          "2",
+          0
+        ]
+      }
+    },
+    "5": {
+      "class_type": "CLIPTextEncode",
+      "inputs": {
+        "text": "",
+        "clip": [
+          "2",
+          0
+        ]
+      }
+    },
+    "6": {
+      "class_type": "EmptyFlux2LatentImage",
+      "inputs": {
+        "width": 1408,
+        "height": 608,
+        "batch_size": 1
+      }
+    },
+    "9": {
+      "class_type": "KSampler",
+      "inputs": {
+        "model": [
+          "1",
+          0
+        ],
+        "positive": [
+          "4",
+          0
+        ],
+        "negative": [
+          "5",
+          0
+        ],
+        "latent_image": [
+          "6",
+          0
+        ],
+        "seed": 421937,
+        "steps": 25,
+        "cfg": 2.5,
+        "sampler_name": "er_sde",
+        "scheduler": "simple",
+        "denoise": 1.0
+      }
+    },
+    "10": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "9",
+          0
+        ],
+        "vae": [
+          "3",
+          0
+        ]
+      }
+    },
+    "11": {
+      "class_type": "SaveImage",
+      "inputs": {
+        "images": [
+          "10",
+          0
+        ],
+        "filename_prefix": "profile-banner/moss-light-4219"
+      }
+    }
+  }
+}

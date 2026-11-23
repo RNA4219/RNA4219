@@ -1,6 +1,6 @@
 <picture>
   <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/rna-sleeve-mobile.webp">
-  <img src="./assets/rna-sleeve.webp" alt="AIコンダクター R_N_A。紙テープに赤鉛筆を入れる手。掲載作品は Quality Evidence Graph と DEAD AIR FM。">
+  <img src="./assets/rna-sleeve.webp" alt="R_N_A — AIコンダクター。紺の地に青白い光と朱の光が扇状に広がり、右で束になる。">
 </picture>
 
 **AIコンダクターの R_N_A です。** 論文を追う仕組みを作ったり、Android実機で言語モデルを動かしたりしています。趣味でAIを利用した創作もします。
