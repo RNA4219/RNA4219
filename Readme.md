@@ -1,30 +1,33 @@
-<h1><img src="./assets/ai-conductor.webp" alt="R_N_A ｜ AIコンダクター"></h1>
+<!-- このREADMEは profile/template.md から生成しています。 -->
+<picture>
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/qeg-score-mobile.png">
+  <img src="./assets/qeg-score.png" alt="R_N_A ｜ AIコンダクター。技術の代表作 Quality Evidence Graph。ログインテストの公開例では、E2Eの5回連続成功と、後継も手動のため失格となったケースを比較できます。">
+</picture>
 
-AIコンダクターのR_N_Aです。研究でも作品づくりでも、どのAIに何を任せ、どこで自分が確かめるかを決めています。工程をつなぐ道具も作ります。
+**[Quality Evidence Graph の実装を開く](https://github.com/RNA4219/quality-evidence-graph)** · [成功例の入力](https://github.com/RNA4219/quality-evidence-graph/tree/v0.4.2/fixtures/positive-placement-change-retirement) · [失格理由の出力](https://github.com/RNA4219/quality-evidence-graph/blob/v0.4.2/fixtures/negative-retirement-manual-replacement/expected-gate-verdict.json)
+
+**AIコンダクターのR_N_Aです。** 論文を調べるときも、曲の流れるWeb作品を作るときも、どのAIに何を任せ、何を自分で確かめるかを決めています。必要な道具は自分で作ります。
 
 ## 技術の代表作 · Quality Evidence Graph
 
-**テストは通った。この変更をリリースしていいか？**
+**ログインの手動テストを、いつ廃止していいか。** QEGは、変更・リスク・テスト・実行記録を結び、リリースの可否とその理由を返します。[QEGの設計と使い方](https://github.com/RNA4219/quality-evidence-graph/blob/main/README_JA.md)
 
-QEGは、コードの変更から要求、リスク、テストの実行記録までをグラフで結び、リリースできるかを理由とともに返します。[QEGの概要と使い方](https://github.com/RNA4219/quality-evidence-graph/blob/main/README_JA.md)
+表紙の譜面は、QEGの公開サンプルを図にしたものです。上段の一点がE2Eテストの成功1回、括弧が基準の3回です。同じリスクを検証して5回連続で成功し、手動に戻す条件も記録された例は `go`。下段は、後継テストの実体がまだ手動だった例です。自動化の根拠が途切れ、`DQ-14` で失格になります。
 
-たとえば、ログインの手動テストを自動化して廃止する場面。QEGは、後継テストが同じリスクを確かめた記録と、手動に戻す条件までたどります。
+判定ロジックはRustで実装し、CLI、Node.js API、GitHub Actionsで共有しています。Node.jsからRustを直接呼び出すようにすると、Windows x64で同じサンプルを繰り返し判定したときの中央値は **11.38 ms → 0.144 ms** になりました。[実装と計測条件](https://github.com/RNA4219/quality-evidence-graph/pull/19)
 
-<picture>
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/qeg-verdicts-mobile.webp">
-  <img src="./assets/qeg-verdicts.webp" alt="ログインの手動テストを廃止する判定例。後継のE2Eテストが同じリスクを検証し、基準3回に対して5回連続で成功した例は go。後継も手動のままなら DQ-14 で disqualified。">
-</picture>
+## 最近のリリース
 
-[廃止を認めた入力例を読む](https://github.com/RNA4219/quality-evidence-graph/tree/main/fixtures/positive-placement-change-retirement) · [矛盾を検出した判定結果を読む](https://github.com/RNA4219/quality-evidence-graph/blob/main/fixtures/negative-retirement-manual-replacement/expected-gate-verdict.json)
-
-判定ロジックはRustで実装し、CLI、Node.js API、GitHub Actionsで共有しています。Node.jsからRustを直接呼び出すようにした結果、Windows x64で同じサンプルを繰り返し判定したときの中央値は **11.38 ms → 0.144 ms** になりました。[実装と計測条件](https://github.com/RNA4219/quality-evidence-graph/pull/19)
+- 2026-11-18　<a href="https://github.com/RNA4219/quality-evidence-graph/releases/tag/v0.4.2">Quality Evidence Graph · v0.4.2</a>
+- 2026-10-24　<a href="https://github.com/RNA4219/llm-atelier/releases/tag/v1.3.0">LLM Atelier · v1.3.0</a>
+- 2026-07-11　<a href="https://github.com/RNA4219/RanD/releases/tag/v0.3.0">RanD · v0.3.0</a>
 
 ## 研究と制作
 
-**RanD** ── 論文やAIニュースを調べ、得られた知見を整理し、評価と通知までつなぐツール。調査を1回動かすと、Markdownのレポートが手元に残ります。[調査を1回実行する](https://github.com/RNA4219/RanD#readme)
+**RanD** では、論文やAIニュースの調査から知見の整理、評価、通知までをつないでいます。一度実行すると、調査結果をMarkdownで読めます。[調査を実行する](https://github.com/RNA4219/RanD#readme)
 
-**LLM Atelier** ── Android端末で動くローカルAIアプリ。Snapdragon 8 Gen 3搭載のnubia実機で、会話モデルの全43層をNPUに載せ、日本語の応答を確認しました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
+**LLM Atelier** は、Android端末で動くローカルAIアプリです。Snapdragon 8 Gen 3搭載のnubia実機で、会話モデルの全43層をNPUに載せ、日本語の応答を確かめました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
 
-**DEAD AIR FM** ── 選局すると周波数表示が一瞬乱れ、次の曲が流れる架空の深夜ラジオ局。YuE2で作った3曲とイラストを、1枚のHTMLに収めました。[ブラウザーで選局して聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
+**DEAD AIR FM** は、選局すると周波数表示が乱れ、次の曲が流れる架空の深夜ラジオ局。自作のデザインスキルとMotion Atlasを使い、YuE2で作った3曲とイラストを1枚のHTMLに収めました。[ブラウザーで選局して聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/) · [制作に使ったスキル](https://github.com/RNA4219/anything-frontend-art-direction)
 
 <a href="https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/"><img src="https://raw.githubusercontent.com/RNA4219/anything-frontend-art-direction/main/docs/dead-air-fm.webp" width="500" alt="DEAD AIR FMを開く。ヘッドホンを着けたDJと選局画面。"></a>
