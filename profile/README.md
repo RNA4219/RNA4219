@@ -2,7 +2,7 @@
 
 公開先は [github.com/RNA4219](https://github.com/RNA4219) です。本文は [Readme.md](../Readme.md) を直接編集してmainに反映します。固定リポジトリはGitHubプロフィールの「Customize your pins」で選びます。
 
-## 表紙と判定図の編集
+## 旧バナーの制作記録と判定図の編集
 
 表紙の[光跡の原画](moss-signal.webp)はDGX Spark上のComfyUIでMOSS Image SFTを使って生成しました。[生成に使ったAPI形式のワークフロー](moss-signal-api.json)にはプロンプト、モデル名、seed（421937）、サイズ（1408×608）、サンプリング条件を収めています。同じモデルのあるComfyUIの `/prompt` にこのJSONをPOSTすると生成できます。名前と肩書きは [render_sleeve.py](render_sleeve.py) で後から組みます。
 
