@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="854" height="104" viewBox="0 0 854 104" role="img" aria-labelledby="title">
+  <title id="title">AI Conductor</title>
+  <defs>
+    <linearGradient id="ink">
+      <stop stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#1c2128"/>
+    </linearGradient>
+    <clipPath id="crest">
+      <path class="near" d="M-520 75 q130 20 260 0 t260 0 260 0 260 0 260 0 260 0 V0 H-520Z"/>
+    </clipPath>
+  </defs>
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      .far { animation: far-wave 20s linear infinite; }
+      .near { animation: near-wave 16s linear infinite; }
+    }
+    @keyframes far-wave { to { transform: translateX(640px); } }
+    @keyframes near-wave { to { transform: translateX(520px); } }
+  </style>
+  <path class="far" fill="#536070" fill-opacity=".54"
+        d="M-640 84 q160 -23 320 0 t320 0 320 0 320 0 320 0 320 0 V0 H-640Z"/>
+  <rect width="854" height="104" fill="url(#ink)" clip-path="url(#crest)"/>
+  <text x="427" y="53" text-anchor="middle" fill="#fff" font-size="40" font-weight="700"
+        font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">AI Conductor</text>
+</svg>

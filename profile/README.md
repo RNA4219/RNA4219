@@ -4,11 +4,7 @@
 
 ## 冒頭の波形
 
-冒頭の画像を押すと、自作ラジオ「DEAD AIR FM」が開きます。波形は87.9 MHzの「Midnight Circuit」から、3小節目と4小節目を切り出したものです。針は曲のテンポ（128 BPM）に合わせて3.75秒で一周します。端末で動きを減らす設定にしている場合は静止画を表示します。
-
-作業台に上がる湯気の横で名前が読める [skulitomのプロフィール](https://github.com/skulitom) と、リポジトリを放送中の曲に見立てた [OthmanAdiのCommit FM](https://github.com/OthmanAdi/commit-fm) を参考にしました。名前は固定し、曲に合わせて針とその周囲の波形だけが動きます。
-
-[音源を含むHTML](https://github.com/RNA4219/anything-frontend-art-direction/blob/f39c407d2f9d79dd931023abd61dd53e81945fb6/examples/dead-air-fm/index.html) を使って画像を作り直せます。PythonにNumPyとPillowをインストールし、FFmpegをパスに通してから `python profile/render_radio.py <index.htmlのパス>` を実行してください。
+[以前のプロフィール](https://github.com/RNA4219/RNA4219/blob/0337067/Readme.md)で使っていた、暗い波と白い「AI Conductor」を横長の帯に仕立てました。文字は固定し、下縁の二枚の波だけが動きます。動きを減らす設定では静止します。色や速度は[バナーのSVG](../assets/ai-conductor-wave.svg)で編集できます。
 
 ## 旧バナーの制作記録と判定図の編集
 
@@ -26,7 +22,7 @@ QEGの節を開くと表示される譜面は別の図です。`python profile/r
 
 ## 意匠の根拠
 
-冒頭では論文調査・ローカルAI・音楽に触れ、デザインスキルの投稿から来た人にはスキルと作例へのリンクを置きます。最初の見出しは技術の代表作QEGです。実装と証拠の採用基準へ進め、その下に調査・実機開発と音楽作品が続きます。
+自己紹介に続けて、デザインスキルと選局画面の作例へのリンクを置きます。最初の見出しは技術の代表作QEGです。実装と証拠の採用基準へ進め、その下に論文調査と実機開発が続きます。
 
 - **本人をどう紹介するか。** Maggie Appletonは、自身の仕事をデザイン・人類学・開発にまたがるものと説明しています。本人のサイトを開くと、最も大きな一文では何を作る人かを動詞で語り、肩書きはその下にあります。ここから、名前と普段作っているものを先に読める構成を取り入れました。[トップ](https://maggieappleton.com/)・[本人の説明](https://maggieappleton.com/about)
 - **光と文字をどう結ぶか。** Robert Henkeの『Lumière』では、一つの音と光の図形を対応させています。作者の公演写真を手がかりに、複数の線がひとつの形を作る構図を試しました。生成画の青白い線と同じ色を、名前の二本の下線に置いています。[作者の説明と公演写真](https://roberthenke.com/concerts/lumiere.html)

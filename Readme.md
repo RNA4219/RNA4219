@@ -1,15 +1,11 @@
-<a href="https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/">
-  <picture>
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave-mobile.png">
-    <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave.png">
-    <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/radio-wave-mobile.gif">
-    <img src="./assets/radio-wave.gif" width="100%" alt="R_N_A · AI CONDUCTOR。DEAD AIR FMを開いて87.9 MHzの「Midnight Circuit」を聴く">
-  </picture>
-</a>
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/RNA4219/RNA4219/main/assets/ai-conductor-still.svg">
+  <img src="./assets/ai-conductor-wave.svg" width="100%" alt="AI Conductor">
+</picture>
 
 AIコンダクターの R_N_A です。論文を追うための道具を作ったり、Android端末で言語モデルを動かしたりしています。趣味の創作にもAIを使います。
 
-画面のデザインをAIに任せたくて、美術館のサイトやゲームの画面を調べてもらいました。書体の選び方や余白の取り方について、制作者自身が語った理由を集め、AIが次の画面を作るときに参照できるスキルにしました。[Anything Frontend Art Directionのスキルと作例](https://github.com/RNA4219/anything-frontend-art-direction)
+画面のデザインをAIに任せたくて、美術館のサイトやゲームの画面を調べてもらいました。書体の選び方や余白の取り方について、制作者自身が語った理由を集め、AIが次の画面を作るときに参照できるスキルにしました。[Anything Frontend Art Direction](https://github.com/RNA4219/anything-frontend-art-direction) · [選局画面の作例「DEAD AIR FM」](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
 
 ## 技術の代表作 · Quality Evidence Graph
 
@@ -33,9 +29,3 @@ CLI、Node.js API、GitHub Actionsは、どれも同じRustのコードで判定
 
 - **RanD** で論文やAIニュースを集めています。集めた資料の評価結果はMarkdownで読めます。[RanDで調査を実行する](https://github.com/RNA4219/RanD#readme)
 - **LLM Atelier** では、Android端末の中で言語モデルを動かしています。Snapdragon 8 Gen 3を搭載したnubiaの実機で、会話モデルの全43層をNPUに載せ、日本語で応答することを確かめました。[実装とAPK](https://github.com/RNA4219/llm-atelier)
-
-## 音楽と画面 · DEAD AIR FM
-
-[![DEAD AIR FMの選局画面。ピンクの局名と、シアンのジャケットを着たDJ。](https://raw.githubusercontent.com/RNA4219/anything-frontend-art-direction/main/docs/dead-air-fm.webp)](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/)
-
-87.9 MHzではダークエレクトロが流れます。92.4 MHzに合わせると、周波数表示が一瞬乱れてアンビエントダブに切り替わります。YuE2で作った3曲とイラストを、一枚のHTMLに収めました。[放送を聴く](https://rna4219.github.io/anything-frontend-art-direction/examples/dead-air-fm/) · [制作に使ったデザインスキル](https://github.com/RNA4219/anything-frontend-art-direction)
