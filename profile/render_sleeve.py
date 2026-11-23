@@ -24,25 +24,27 @@ def edge_mask(size):
 
 
 def cover(source, mobile):
-    width, height = (768, 408) if mobile else (1408, 566)
+    width, height = (768, 148) if mobile else (1408, 184)
     canvas = Image.new("RGB", (width, height), source.getpixel((0, 0)))
-    art_width = round(width * (0.84 if mobile else 0.83))
-    art = ImageOps.contain(source, (art_width, height), method=Image.Resampling.LANCZOS)
-    canvas.paste(art, (width - art.width, (height - art.height) // 2), edge_mask(art.size))
+    art_width = round(width * (0.67 if mobile else 0.60))
+    trails = source.crop((source.width // 5, 0, source.width, source.height))
+    art = ImageOps.fit(trails, (art_width, height), method=Image.Resampling.LANCZOS,
+                       centering=(1.0, 0.63))
+    canvas.paste(art, (width - art_width, 0), edge_mask(art.size))
 
     draw = ImageDraw.Draw(canvas)
-    margin = 35 if mobile else 70
-    baseline = round(height * 0.56)
-    wordmark = ImageFont.truetype(SERIF, 113 if mobile else 198)
+    margin = 26 if mobile else 44
+    baseline = 83 if mobile else 126
+    wordmark = ImageFont.truetype(SERIF, 91 if mobile else 112)
     draw.text((margin - 4, baseline), "R_N_A", font=wordmark, fill=INK, anchor="ls")
     for prefix in ("R", "R_N"):
         x = margin - 4 + wordmark.getlength(prefix)
         draw.text((x, baseline), "_", font=wordmark, fill=CYAN, anchor="ls")
 
-    role = ImageFont.truetype(SANS, 34)
-    label_baseline = baseline + (66 if mobile else 81)
-    tracking = 2.5 if mobile else 4.2
-    pen = float(margin)
+    role = ImageFont.truetype(SANS, 32 if mobile else 34)
+    label_baseline = 129 if mobile else 103
+    tracking = 2.5
+    pen = float(margin) if mobile else margin + wordmark.getlength("R_N_A") + 32
     for letter in "AI CONDUCTOR":
         draw.text((round(pen), label_baseline), letter, font=role, fill=INK, anchor="ls")
         pen += role.getlength(letter) + tracking
