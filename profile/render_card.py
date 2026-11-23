@@ -37,7 +37,7 @@ def lettering(parent, font, label, x, y, size, color, tracking=0):
 
 
 def travelling_light(group, defs, halves, compact, animated):
-    """白い丸が帯の両端で減速し、来た道を戻る。"""
+    """藤色の丸が帯の両端で減速し、来た道を戻る。"""
     tip = halves * 44
     halo = add(defs, "radialGradient", id="light-halo")
     for offset, opacity in ((0, .45), (.45, .30), (1, 0)):
@@ -55,7 +55,7 @@ def travelling_light(group, defs, halves, compact, animated):
         head.set("transform", f"translate({tip + 27} 0)")
     radius = 6 if compact else 4
     add(head, "circle", r=radius * 2.1, fill="url(#light-halo)")
-    add(head, "circle", r=radius, fill="#fff")
+    add(head, "circle", r=radius, fill="#ddbbff")
 
 
 def helix(root, defs, compact, animated):

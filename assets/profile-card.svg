@@ -42,7 +42,7 @@
     <g>
       <animateMotion path="M0 -24 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c21 0 22 48 44 48 c21 0 22 -48 44 -48 c36 0 36 48 0 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48 c-22 0 -23 -48 -44 -48 c-22 0 -23 48 -44 48" dur="24s" begin="-6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keyPoints="0;1;0" keySplines=".18 0 .82 1;.18 0 .82 1" />
       <circle r="8.4" fill="url(#light-halo)" />
-      <circle r="4" fill="#fff" />
+      <circle r="4" fill="#ddbbff" />
     </g>
   </g>
   <g transform="translate(24 80) scale(0.098 -0.098)" fill="#fafaff">

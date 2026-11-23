@@ -31,7 +31,7 @@
     <path d="M1 -26 C25 -26 25 21 43 22" transform="translate(44)" fill="none" stroke="#cfc2fa" stroke-width="0.8" />
     <g transform="translate(115 0)">
       <circle r="12.600000000000001" fill="url(#light-halo)" />
-      <circle r="6" fill="#fff" />
+      <circle r="6" fill="#ddbbff" />
     </g>
   </g>
   <g transform="translate(14 53) scale(0.053 -0.053)" fill="#fafaff">
